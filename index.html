@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>考勤休假事件时间线</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #242424;
+      --muted: #666;
+      --line: #d8d8d8;
+      --dot: #555;
+      --paper: #fff;
+      --page: #f5f5f5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    main {
+      width: min(860px, calc(100% - 32px));
+      margin: 32px auto;
+      padding: 40px 48px;
+      background: var(--paper);
+      border: 1px solid #e5e5e5;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 25px;
+      line-height: 1.35;
+    }
+
+    .lead {
+      margin: 0 0 32px;
+      color: var(--muted);
+    }
+
+    .timeline {
+      position: relative;
+      margin: 0;
+      padding: 0 0 0 30px;
+      list-style: none;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 7px;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .event {
+      position: relative;
+      margin: 0 0 26px;
+      break-inside: avoid;
+    }
+
+    .event::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: -29px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid var(--paper);
+      border-radius: 50%;
+      background: var(--dot);
+      box-shadow: 0 0 0 1px var(--dot);
+    }
+
+    .date {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .event p { margin: 0 0 5px; }
+    .event p:last-child { margin-bottom: 0; }
+
+    .summary {
+      margin-top: 36px;
+      padding: 18px 20px;
+      border-top: 1px solid var(--line);
+      background: #fafafa;
+    }
+
+    .summary p { margin: 0 0 8px; }
+    .summary p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 600px) {
+      main {
+        width: 100%;
+        margin: 0;
+        padding: 28px 20px;
+        border: 0;
+      }
+      h1 { font-size: 22px; }
+    }
+
+    @media print {
+      body { background: #fff; font-size: 12pt; }
+      main { width: 100%; margin: 0; padding: 0; border: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>考勤休假事件时间线</h1>
+    <p class="lead">续签协商过程中，关于考勤休假的详细记录</p>
+
+    <ol class="timeline">
+      <li class="event">
+        <time class="date">6.15</time>
+        <p>主管明确告知：公司不予续签。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.16</time>
+        <p>HRBP明确通知：二次合同即将到期，公司决定不予续签。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.18</time>
+        <p>HRBP告知：已为你申请，可以健康陪护假、年假一起连着休。</p>
+        <p>HRBP告知：交接工作已经完成。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.22</time>
+        <p>和主管在内部软件上同步，6.23下午开始休假，对方没有拒绝。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.23</time>
+        <p>中午，和主管送别聚餐，口头告知下午开始休假。</p>
+        <p>随后，提交考勤流程（依次为4.5天健康陪护假、13天年假）。</p>
+        <p>打卡离开公司，开始休假。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.24-6.26</time>
+        <p>没有约到医院。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.26</time>
+        <p>法务打电话来询问N+1的方案考虑的如何了，我说等下周一（6.29）再答复。</p>
+        <p>法务提及：{6.23-6.26}健康陪护假需要提交证明材料，不然目前是旷工状态。</p>
+        <p>我回复：那优先休年假吧，我稍后更正一下假期。</p>
+        <p>法务表示：好的，关于这个之后再说，先考虑协商方案吧。（此时此刻，法务已经在为后续的恶意行为做准备了）</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.27-6.28</time>
+        <p>周末。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.27</time>
+        <p>我打开内部沟通软件，看到了主管的消息“需要提供病假证明”。</p>
+        <p>我回复：原本是计划先去医院的，但是医院的号太难约了。我把之前的流程撤回，优先休年假吧，麻烦周一审批一下。</p>
+        <p>随后，我在系统中撤回了之前的全部休假流程，更换成了{6.23-6.26}先休年假。</p>
+        <p>主管已读默许，但不回复、不审批。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.29</time>
+        <p>约到了医院，跑了两家医院做检查。</p>
+        <p>在拿到检查报告后，第一时间上传了6.29当天的病假证明。</p>
+        <p>当日，法务提到“本年度法定年假已休超”，这等同于认可了{6.23-6.26}的年假流程。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">6.30</time>
+        <p>遵循法务的安排，正常到岗。</p>
+        <p>主管说已经没有需求了，随后紧急撤回。</p>
+        <p>法务再次明确认可{6.23-6.26}为年假，并提出可以转为健康陪护假，不扣除年假（年假留着用于折现）。</p>
+        <p>和主管在内部软件沟通，7.1请病假去医院。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.1</time>
+        <p>去医院做牙齿手术，并且在拿到病假单后第一时间上传至系统。</p>
+        <p>病假单证明7.1-7.3需要休假。并且告知了主管，主管已读不回。</p>
+        <p>再次催促主管审批之前的年假流程，主管已读不回。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.1-7.3</time>
+        <p>遵医嘱休病假。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.4-7.5</time>
+        <p>周末。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.6-7.9</time>
+        <p>正常到岗。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.7</time>
+        <p>因续签协商未能达成一致，法务开始恶意追究考勤问题。</p>
+        <p>否定了之前对{6.23-6.26}年假的认可，改口为{6.23-6.26}健康陪护假未得到许可。</p>
+        <p>我向其出具了请假前的请示、告知、考勤证据，以及后续考勤中和主管的同步记录。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.10</time>
+        <p>下午17.34分，法务邀请参加会议，并告知6.23-6.26考勤违纪，公司单方解除，定于7.14解除。我不认可。</p>
+        <p>下午18.30分，强制停用我的办公权限、强制要求归还设备。</p>
+        <p>此过程前后仅不足1小时。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.11</time>
+        <p>收到公司邮寄的《解除劳动合同通知书》。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.12</time>
+        <p>我邮寄回《关于解除劳动合同通知书的异议书》。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.13</time>
+        <p>前往公司拿取个人物品，发现门禁权限被停用。</p>
+        <p>向HRBP索要员工手册（2026版），被告知不予提供。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.14</time>
+        <p>合同最后1天。</p>
+      </li>
+
+      <li class="event">
+        <time class="date">7.15</time>
+        <p>提出仲裁申请。</p>
+      </li>
+    </ol>
+
+    <section class="summary" aria-label="补充说明">
+      <p>以上所有内容均有截图、录音，足以证明法务口径前后不一。</p>
+      <p>在续签协商未达成一致的情况下，为了规避违法终止劳动合同的法定义务，联合主管、HRBP滥用管理权限，恶意虚构旷工，达成单方解除的目的。</p>
+    </section>
+  </main>
+</body>
+</html>
